@@ -4,13 +4,16 @@ import com.buildtools.BuildServerCore.Commands.CreateWorldCommand;
 import com.buildtools.BuildServerCore.Commands.MapDisableCommand;
 import com.buildtools.BuildServerCore.Commands.MapEnableCommand;
 import com.buildtools.BuildServerCore.Commands.WorldTPCommand;
-import com.buildtools.BuildServerCore.CustomClasses.BuildWorld;
-import com.buildtools.BuildServerCore.CustomClasses.Component;
 import com.buildtools.BuildServerCore.CustomClasses.ComponentTeleport;
 import com.buildtools.BuildServerCore.CustomClasses.ComponentWorld;
+import com.buildtools.BuildServerCore.CustomClasses.Generators.FlatWorld;
+import com.buildtools.BuildServerCore.CustomClasses.Generators.VoidWorld;
 import com.buildtools.BuildServerCore.Events.EventHandler;
+import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 
 public class Main extends JavaPlugin{
@@ -20,11 +23,17 @@ public class Main extends JavaPlugin{
     public static ComponentWorld worldComponent;
     public static ComponentTeleport teleportComponent;
 
+    public static Map<String, ChunkGenerator> translationTable;
+
     @Override
     public void onEnable() {
         plugin=this;
         worldComponent = new ComponentWorld();
         teleportComponent = new ComponentTeleport();
+
+        translationTable = new HashMap<String, ChunkGenerator>();
+        translationTable.put("void", new VoidWorld());
+        translationTable.put("flat", new FlatWorld());
 
         plugin.getCommand("createmap").setExecutor(new CreateWorldCommand());
         plugin.getCommand("enablemap").setExecutor(new MapEnableCommand());
@@ -37,10 +46,5 @@ public class Main extends JavaPlugin{
 
     @Override
     public void onDisable() {
-        for (BuildWorld world: worldComponent.worldList.values()) {
-            if(world.isLoadedOnServer()){
-                world.unloadWorld();
-            }
-        }
     }
 }

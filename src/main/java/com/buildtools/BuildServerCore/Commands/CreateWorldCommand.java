@@ -21,11 +21,8 @@ public class CreateWorldCommand implements CommandExecutor {
 
 
         if(commandSender instanceof Player){
-            Map<String, ChunkGenerator> translationTable = new HashMap<String, ChunkGenerator>();
-            translationTable.put("void", new VoidWorld());
-            translationTable.put("flat", new FlatWorld());
 
-            Main.worldComponent.createWorld(strings[0], translationTable.get(strings[1]), ((Player) commandSender).getDisplayName());
+            Main.worldComponent.createMap(strings[0], ((Player) commandSender).getDisplayName(), strings[1], strings[2]);
         }
 
         return true;
