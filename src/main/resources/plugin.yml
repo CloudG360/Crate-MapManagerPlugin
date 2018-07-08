@@ -1,0 +1,20 @@
+name: BuildServerCore
+version: 0.1
+description: A BETA version of the build server core plugin.
+author: CloudGamer360
+load: STARTUP
+main: com.buildtools.BuildServerCore.Main
+
+commands:
+  createmap:
+    description: Creates a build map for the user.
+    usage: /createmap <id> <generator>
+  enablemap:
+    description: Enables a build map.
+    usage: /enablemap <id>
+  disablemap:
+    description: Disables a build map.
+    usage: /disablemap <id>
+  tptoworld:
+    description: Teleports the user to a build map.
+    usage: /tptoworld <id>
