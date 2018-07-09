@@ -34,6 +34,7 @@ public class ComponentWorld extends Component {
         world.setAmbientSpawnLimit(0);
         world.setAnimalSpawnLimit(0);
         world.setWaterAnimalSpawnLimit(0);
+        world.setSpawnLocation(0, 70, 0);
         world.save();
 
         messageToPublicChat("Generating Buildinfo file");
@@ -43,7 +44,7 @@ public class ComponentWorld extends Component {
             cfgwriter.write("name="+name+"\nauthor="+author+"\ncategory="+category+"\ngenerator="+generator);
             messageToPublicChat("Generated Buildinfo file");
         } catch (IOException err){
-            messageToPublicChat("An IOException occured during the creation of 'buildinfo.cfg'. Please manually delete the save file as it will no longer be loaded.");
+            messageToPublicChat("An IOException occurred during the creation of 'buildinfo.cfg'. Please manually delete the save file as it will no longer be loaded.");
             Main.plugin.getServer().unloadWorld(world, true);
             return;
         }
@@ -61,7 +62,7 @@ public class ComponentWorld extends Component {
             new File(".maps/"+name).mkdir();
             FileUtils.copyDirectory(world.getWorldFolder(), new File(".maps/"+name));
         } catch (IOException err){
-            messageToPublicChat("An IOException occured while moving the map to the 'maps' directory. Please manually delete the save file as it will no longer be loaded.");
+            messageToPublicChat("An IOException occurred while moving the map to the 'maps' directory. Please manually delete the save file as it will no longer be loaded.");
             return;
         }
 
@@ -74,12 +75,49 @@ public class ComponentWorld extends Component {
         World world = Main.plugin.getServer().getWorld(name);
         world.save();
 
-        //Move Players out.
+        messageToPublicChat("Moving players out of "+name);
+        for(Player player:world.getPlayers()){
+            Main.teleportComponent.teleportToPosition(player, Main.plugin.getServer().getWorlds().get(0).getSpawnLocation());
+            messageToPlayerChat("You have been moved out of the Map "+name, player);
+        }
 
+        messageToPublicChat("Unloading map world from server.");
         Main.plugin.getServer().unloadWorld(world, true);
-        messageToPublicChat("Moving Up-to-date copy to map library ");
-        //move to /maps
-        
+        messageToPublicChat("Moving Up-to-date copy to map library.");
+
+        try {
+            if(new File(".maps/"+name).exists()){
+                Thread.sleep(10000);
+            }
+            FileUtils.moveDirectory(world.getWorldFolder(), new File("./maps/"));
+        } catch (IOException err){
+            messageToPublicChat("An IOException occurred while creating a map library copy. The world is saved in the sever directory and can be manually fixed by moving it.");
+        } catch (InterruptedException err){
+            messageToPublicChat("An Interrupted occurred while creating a map library copy. The world is saved in the sever directory and can be manually fixed by moving it.");
+
+        }
+
+        messageToPublicChat("Unloaded map "+name+" successfully!");
+
+
+    }
+
+    public void loadMap(String name){
+        if(!(new File("./maps/"+name).exists())){
+            messageToPublicChat("The map "+name+" does not exist in the library.");
+            return;
+        }
+
+        try {
+            FileUtils.copyDirectory(new File("./maps/" + name), new File("."));
+        } catch (IOException err){
+            messageToPublicChat("An IOException occured when migrating the map "+name+" from the library to the active server. The save is safe in the library but has not been loaded.");
+            return;
+        }
+
+        Main.plugin.getServer().createWorld(new WorldCreator(name));
+        messageToPublicChat("Loaded the map "+name+" successfully (/tptoworld "+name+")");
+
 
     }
 
