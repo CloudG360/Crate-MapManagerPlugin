@@ -13,7 +13,7 @@ public class MapDisableCommand implements CommandExecutor {
 
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings){
         if(commandSender instanceof Player){
-            Component.messageToPublicChatFormat(ChatColor.BLUE, "WorldManager", "Bad Command");
+            Main.worldComponent.unloadMap(strings[0]);
         } else {
             Component.messageToPublicChatFormat(ChatColor.BLUE, "WorldManager", "You aren't a player. Please log in.");
         }
