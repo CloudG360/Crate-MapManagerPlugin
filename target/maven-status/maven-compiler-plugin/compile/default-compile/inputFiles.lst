@@ -1,6 +1,7 @@
-C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\BuildWorld.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\Component.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\ComponentWorld.java
+C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\Generators\VoidWorld.java
+C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\Generators\FlatWorld.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Commands\WorldTPCommand.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Commands\CreateWorldCommand.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Events\EventHandler.java

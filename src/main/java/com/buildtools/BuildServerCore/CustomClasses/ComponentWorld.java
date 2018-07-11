@@ -42,6 +42,7 @@ public class ComponentWorld extends Component {
             new File(world.getWorldFolder() + "/buildinfo.cfg").createNewFile();
             FileWriter cfgwriter = new FileWriter(new File(world.getWorldFolder() + "/buildinfo.cfg"));
             cfgwriter.write("name="+name+"\nauthor="+author+"\ncategory="+category+"\ngenerator="+generator);
+            cfgwriter.close();
             messageToPublicChat("Generated Buildinfo file");
         } catch (IOException err){
             messageToPublicChat("An IOException occurred during the creation of 'buildinfo.cfg'. Please manually delete the save file as it will no longer be loaded.");
@@ -49,6 +50,7 @@ public class ComponentWorld extends Component {
             return;
         }
 
+        world.save();
         Main.plugin.getServer().unloadWorld(world, true);
 
         try{
@@ -56,10 +58,10 @@ public class ComponentWorld extends Component {
                 new File("./maps").mkdir();
             }
             if(new File("./maps/"+name).exists()){
-                FileUtils.deleteDirectory(new File("./maps/"+name));
+                deleteWorld(new File("./maps/"+name));
                 messageToPublicChat("Cleaning up old directories.");
             }
-            new File(".maps/"+name).mkdir();
+            new File("./maps/"+name).mkdir();
             FileUtils.copyDirectory(world.getWorldFolder(), new File("./maps/"+name));
         } catch (IOException err){
             messageToPublicChat("An IOException occurred while moving the map to the 'maps' directory. Please manually delete the save file as it will no longer be loaded.");
@@ -87,17 +89,15 @@ public class ComponentWorld extends Component {
 
         try {
             if(new File("./maps/"+name).exists()){
-                Thread.sleep(10000);
-                FileUtils.deleteDirectory(new File("./maps/"+name));
+                new File("./maps"+name).delete();
             }
-            FileUtils.moveDirectory(world.getWorldFolder(), new File("./maps/"));
-        } catch (IOException err){
+
+            FileUtils.copyDirectory(world.getWorldFolder(), new File("./maps/"+name));
+            deleteWorld(world.getWorldFolder());
+
+        } catch (IOException err) {
             messageToPublicChat("An IOException occurred while creating a map library copy. The world is saved in the sever directory and can be manually fixed by moving it.");
-        } catch (InterruptedException err){
-            messageToPublicChat("An Interrupted occurred while creating a map library copy. The world is saved in the sever directory and can be manually fixed by moving it.");
-
         }
-
         messageToPublicChat("Unloaded map "+name+" successfully!");
 
 
@@ -110,7 +110,8 @@ public class ComponentWorld extends Component {
         }
 
         try {
-            FileUtils.copyDirectory(new File("./maps/" + name), new File("."));
+            new File("./"+name).mkdir();
+            FileUtils.copyDirectory(new File("./maps/" + name), new File("./"+name));
         } catch (IOException err){
             messageToPublicChat("An IOException occured when migrating the map "+name+" from the library to the active server. The save is safe in the library but has not been loaded.");
             return;
@@ -120,6 +121,20 @@ public class ComponentWorld extends Component {
         messageToPublicChat("Loaded the map "+name+" successfully (/tptoworld "+name+")");
 
 
+    }
+
+    public boolean deleteWorld(File path) {
+        if(path.exists()) {
+            File files[] = path.listFiles();
+            for(int i=0; i<files.length; i++) {
+                if(files[i].isDirectory()) {
+                    deleteWorld(files[i]);
+                } else {
+                    files[i].delete();
+                }
+            }
+        }
+        return(path.delete());
     }
 
 
