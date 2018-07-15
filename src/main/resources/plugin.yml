@@ -18,3 +18,6 @@ commands:
   tptoworld:
     description: Teleports the user to a build map.
     usage: /tptoworld <id>
+  map:
+      description: Opens the Map Manager UI
+      usage: /map

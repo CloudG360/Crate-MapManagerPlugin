@@ -1,10 +1,8 @@
 package com.buildtools.BuildServerCore;
 
-import com.buildtools.BuildServerCore.Commands.CreateWorldCommand;
-import com.buildtools.BuildServerCore.Commands.MapDisableCommand;
-import com.buildtools.BuildServerCore.Commands.MapEnableCommand;
-import com.buildtools.BuildServerCore.Commands.WorldTPCommand;
+import com.buildtools.BuildServerCore.Commands.*;
 import com.buildtools.BuildServerCore.CustomClasses.ComponentTeleport;
+import com.buildtools.BuildServerCore.CustomClasses.ComponentUI;
 import com.buildtools.BuildServerCore.CustomClasses.ComponentWorld;
 import com.buildtools.BuildServerCore.CustomClasses.Generators.FlatWorld;
 import com.buildtools.BuildServerCore.CustomClasses.Generators.VoidWorld;
@@ -22,6 +20,7 @@ public class Main extends JavaPlugin{
 
     public static ComponentWorld worldComponent;
     public static ComponentTeleport teleportComponent;
+    public static ComponentUI uiComponent;
 
     public static Map<String, ChunkGenerator> translationTable;
 
@@ -30,6 +29,7 @@ public class Main extends JavaPlugin{
         plugin=this;
         worldComponent = new ComponentWorld();
         teleportComponent = new ComponentTeleport();
+        uiComponent = new ComponentUI();
 
         translationTable = new HashMap<String, ChunkGenerator>();
         translationTable.put("void", new VoidWorld());
@@ -39,6 +39,7 @@ public class Main extends JavaPlugin{
         plugin.getCommand("enablemap").setExecutor(new MapEnableCommand());
         plugin.getCommand("disablemap").setExecutor(new MapDisableCommand());
         plugin.getCommand("tptoworld").setExecutor(new WorldTPCommand());
+        plugin.getCommand("map").setExecutor(new MapManagerCommand());
 
         getServer().getPluginManager().registerEvents(new EventHandler(), plugin);
         getServer().getLogger().log(Level.INFO, "Launched plugin");

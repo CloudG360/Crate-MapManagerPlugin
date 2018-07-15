@@ -14,7 +14,7 @@ public class ComponentTeleport extends Component {
 
     public ComponentTeleport() {
         componentID = "Teleport";
-        componentColour = ChatColor.BLUE;
+        componentColour = ChatColor.DARK_GREEN;
     }
 
 

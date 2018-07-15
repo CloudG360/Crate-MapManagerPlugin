@@ -11,7 +11,7 @@ public abstract class Component {
 
     public Component(){
         componentID="Generic";
-        componentColour=ChatColor.BLUE;
+        componentColour=ChatColor.DARK_GREEN;
     }
 
     public void messageToPublicChat(String message){

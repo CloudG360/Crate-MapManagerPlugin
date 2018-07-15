@@ -22,8 +22,7 @@ public class ComponentWorld extends Component {
 
     public ComponentWorld() {
         componentID = "World Manager";
-        componentColour = ChatColor.BLUE;
-        componentColour = ChatColor.BLUE;
+        componentColour = ChatColor.DARK_GREEN;
     }
 
     public void createMap(String name, String author, String category, String generator){

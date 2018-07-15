@@ -1,11 +1,13 @@
-com\buildtools\BuildServerCore\CustomClasses\Generators\FlatWorld.class
-com\buildtools\BuildServerCore\CustomClasses\ComponentTeleport.class
 com\buildtools\BuildServerCore\CustomClasses\Component.class
 com\buildtools\BuildServerCore\CustomClasses\ComponentWorld.class
-com\buildtools\BuildServerCore\Commands\WorldTPCommand.class
 com\buildtools\BuildServerCore\Commands\CreateWorldCommand.class
-com\buildtools\BuildServerCore\Commands\MapDisableCommand.class
 com\buildtools\BuildServerCore\Commands\MapEnableCommand.class
 com\buildtools\BuildServerCore\Events\EventHandler.class
+com\buildtools\BuildServerCore\CustomClasses\ComponentUI.class
+com\buildtools\BuildServerCore\CustomClasses\Generators\FlatWorld.class
+com\buildtools\BuildServerCore\CustomClasses\ComponentTeleport.class
+com\buildtools\BuildServerCore\Commands\MapManagerCommand.class
+com\buildtools\BuildServerCore\Commands\WorldTPCommand.class
+com\buildtools\BuildServerCore\Commands\MapDisableCommand.class
 com\buildtools\BuildServerCore\CustomClasses\Generators\VoidWorld.class
 com\buildtools\BuildServerCore\Main.class
