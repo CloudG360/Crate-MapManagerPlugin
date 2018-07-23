@@ -5,9 +5,11 @@ C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\B
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\ComponentUI.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Commands\MapEnableCommand.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\ComponentTeleport.java
+C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Commands\HubCommand.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\Component.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\ComponentWorld.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\CustomClasses\Generators\VoidWorld.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Commands\CreateWorldCommand.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Main.java
 C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Commands\MapDisableCommand.java
+C:\Users\wills\Documents\GitHub\BuildServerPlugin\src\main\java\com\buildtools\BuildServerCore\Commands\SpeedCommand.java
