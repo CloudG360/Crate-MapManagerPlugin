@@ -26,6 +26,7 @@ public class FlatWorld extends ChunkGenerator {
                 chunk.setBlock(xpos, 2, zpos, Material.DIRT);
                 chunk.setBlock(xpos, 3, zpos, Material.DIRT);
                 chunk.setBlock(xpos, 4, zpos, Material.GRASS);
+
             }
         }
 

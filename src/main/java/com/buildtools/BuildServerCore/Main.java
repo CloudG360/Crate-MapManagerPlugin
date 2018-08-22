@@ -7,6 +7,8 @@ import com.buildtools.BuildServerCore.CustomClasses.ComponentWorld;
 import com.buildtools.BuildServerCore.CustomClasses.Generators.FlatWorld;
 import com.buildtools.BuildServerCore.CustomClasses.Generators.VoidWorld;
 import com.buildtools.BuildServerCore.Events.EventHandler;
+import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -40,6 +42,8 @@ public class Main extends JavaPlugin{
         plugin.getCommand("disablemap").setExecutor(new MapDisableCommand());
         plugin.getCommand("tptoworld").setExecutor(new WorldTPCommand());
         plugin.getCommand("map").setExecutor(new MapManagerCommand());
+        plugin.getCommand("hub").setExecutor(new HubCommand());
+        plugin.getCommand("speed").setExecutor(new SpeedCommand());
 
         getServer().getPluginManager().registerEvents(new EventHandler(), plugin);
         getServer().getLogger().log(Level.INFO, "Launched plugin");
@@ -47,5 +51,10 @@ public class Main extends JavaPlugin{
 
     @Override
     public void onDisable() {
+        for (World world: Bukkit.getWorlds()) {
+            if(!(world.getName().equals( Bukkit.getWorlds().get(0).getName() ))){
+                Main.worldComponent.unloadMap(world.getName());
+            }
+        }
     }
 }

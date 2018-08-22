@@ -40,7 +40,6 @@ public class EventHandler implements Listener {
         if(event.getInventory().getType() == InventoryType.CHEST) {
             List<String> loreCheck = new ArrayList<>();
             loreCheck.add(ChatColor.BLACK + "ID:48037181-6541-41fa-ac1d-b5811f4e19b7");
-            Component.messageToPublicChatFormat(ChatColor.DARK_RED, "Debug", "UI CLICK EVENT");
             if (event.getInventory().getItem(1).getItemMeta().getLore().equals(loreCheck)) {
                 event.setCancelled(true);
                 event.getWhoClicked().closeInventory();

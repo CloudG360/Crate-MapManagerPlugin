@@ -11,13 +11,13 @@ commands:
     usage: /createmap <string- id> <string- Category> <string- generator>
   enablemap:
     description: Enables a build map.
-    usage: /enablemap <string- id>
+    usage: /enablemap <id>
   disablemap:
     description: Disables a build map.
-    usage: /disablemap <string- id>
+    usage: /disablemap <id>
   tptoworld:
     description: Teleports the user to a build map.
-    usage: /tptoworld <string- id>
+    usage: /tptoworld <id>
   map:
     description: Opens the Map Manager UI
     usage: /map
@@ -26,4 +26,4 @@ commands:
     usage: /hub
   speed:
     description: Changes user's speed.
-    usage: /speed <string- foot|fly> <float- speed>
+    usage: /speed <foot|fly> <speed>

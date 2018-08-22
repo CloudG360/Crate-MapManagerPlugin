@@ -16,17 +16,24 @@ public class SpeedCommand implements CommandExecutor {
 
             Player player = (Player) commandSender;
 
+            float speed = Float.valueOf(strings[1]) / 10;
+
+            if (speed > 1){
+                Component.messageToPublicChatFormat(ChatColor.YELLOW, "Speed", "Please choose a value between "+ChatColor.YELLOW+"0.0 "+ChatColor.GRAY+"and "+ChatColor.YELLOW+"10.0.");
+                return true;
+            }
+
             if(strings[0].equals("fly")) {
-                player.setFlySpeed(Float.valueOf(strings[1]));
-                Component.messageToPublicChatFormat(ChatColor.DARK_GREEN, "Speed", "Updated your Flight Speed to "+ChatColor.YELLOW+strings[1]);
+                player.setFlySpeed(speed);
+                Component.messageToPublicChatFormat(ChatColor.YELLOW, "Speed", "Updated your Flight Speed to "+ChatColor.YELLOW+String.valueOf(speed * 10));
             }
             if(strings[0].equals("foot")) {
-                player.setWalkSpeed(Float.valueOf(strings[1]));
-                Component.messageToPublicChatFormat(ChatColor.DARK_GREEN, "Speed", "Updated your Ground Speed to "+ChatColor.YELLOW+strings[1]);
+                player.setWalkSpeed(speed);
+                Component.messageToPublicChatFormat(ChatColor.YELLOW, "Speed", "Updated your Ground Speed to "+ChatColor.YELLOW+String.valueOf(speed * 10));
             }
 
         } else {
-            Component.messageToPublicChatFormat(ChatColor.DARK_GREEN, "Speed", "You aren't a player. Please log in.");
+            Component.messageToPublicChatFormat(ChatColor.YELLOW, "Speed", "You aren't a player. Please log in.");
         }
 
         return true;

@@ -18,7 +18,7 @@ public class ComponentUI extends Component {
 
     public ComponentUI() {
         componentID = "UI";
-        componentColour = ChatColor.DARK_GREEN;
+        componentColour = ChatColor.BLUE;
 
         uis = new HashMap<String, Inventory>();
 
