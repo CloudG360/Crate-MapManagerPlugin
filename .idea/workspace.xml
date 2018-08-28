@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50e490aa-227e-4e0c-8aec-687f86dddded" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/Commands/SpeedCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/Commands/SpeedCommand.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/CustomClasses/ComponentTeleport.java" afterPath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/CustomClasses/ComponentTeleport.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/CustomClasses/ComponentUI.java" afterPath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/CustomClasses/ComponentUI.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/CustomClasses/Generators/FlatWorld.java" afterPath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/CustomClasses/Generators/FlatWorld.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/Events/EventHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/Events/EventHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/buildtools/BuildServerCore/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-      <change beforePath="$PROJECT_DIR$/target/BuildServerPlugin-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/BuildServerPlugin-1.0-SNAPSHOT.jar" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/Commands/SpeedCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/Commands/SpeedCommand.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/CustomClasses/ComponentTeleport.class" afterPath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/CustomClasses/ComponentTeleport.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/CustomClasses/ComponentUI.class" afterPath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/CustomClasses/ComponentUI.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/CustomClasses/Generators/FlatWorld.class" afterPath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/CustomClasses/Generators/FlatWorld.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/Events/EventHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/Events/EventHandler.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/Main.class" afterPath="$PROJECT_DIR$/target/classes/com/buildtools/BuildServerCore/Main.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" />
-    </list>
+    <list default="true" id="50e490aa-227e-4e0c-8aec-687f86dddded" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -346,8 +329,8 @@
       </pane>
       <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -476,6 +459,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
