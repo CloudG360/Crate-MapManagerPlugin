@@ -44,6 +44,8 @@ public class Main extends JavaPlugin{
         plugin.getCommand("map").setExecutor(new MapManagerCommand());
         plugin.getCommand("hub").setExecutor(new HubCommand());
         plugin.getCommand("speed").setExecutor(new SpeedCommand());
+        plugin.getCommand("mapedit").setExecutor(new MapDataEditCommand());
+        plugin.getCommand("mapwhitelist").setExecutor(new MapWhitelistEditCommand());
 
         getServer().getPluginManager().registerEvents(new EventHandler(), plugin);
         getServer().getLogger().log(Level.INFO, "Launched plugin");

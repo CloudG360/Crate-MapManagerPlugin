@@ -27,3 +27,9 @@ commands:
   speed:
     description: Changes user's speed.
     usage: /speed <foot|fly> <speed>
+  mapedit:
+      description: Edits map data.
+      usage: /mapedit ???
+  mapwhitelist:
+      description: Edits the whitelist.
+      usage: /mapwhitelist ???

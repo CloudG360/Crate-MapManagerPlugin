@@ -20,8 +20,20 @@ public abstract class Component {
             player.sendMessage(messageOut);
         }
     }
+
     public static void messageToPublicChatFormat(ChatColor compColour, String compID, String message){
         String messageOut = compColour + compID + "> "+ ChatColor.GRAY + message;
+        for(Player player:Main.plugin.getServer().getOnlinePlayers()){
+            player.sendMessage(messageOut);
+        }
+    }
+    public static void messageToPlayerChatFormat(Player player, ChatColor compColour, String compID, String message){
+        String messageOut = compColour + compID + "> "+ ChatColor.GRAY + message;
+        player.sendMessage(messageOut);
+
+    }
+    public static void messageToChatFormat(String prefix, ChatColor compColour, String compID, String message){
+        String messageOut = prefix + compColour +" "+compID + ": "+ChatColor.RESET+ ChatColor.GRAY + message;
         for(Player player:Main.plugin.getServer().getOnlinePlayers()){
             player.sendMessage(messageOut);
         }

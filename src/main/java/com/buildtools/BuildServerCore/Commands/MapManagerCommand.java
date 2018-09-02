@@ -24,7 +24,7 @@ public class MapManagerCommand implements CommandExecutor {
 
             Player player = (Player) commandSender;
 
-            Main.uiComponent.openUI(player, "test");
+            player.openInventory(Main.uiComponent.uiMapManager("none"));
         }
 
         return true;
